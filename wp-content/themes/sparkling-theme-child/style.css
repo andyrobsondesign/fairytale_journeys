@@ -1,0 +1,225 @@
+/*
+Theme Name: Sparkling-Theme-Child
+Theme URI: http://colorlib.com/wp/themes/sparkling
+Author: Colorlib
+Author URI: http://colorlib.com/
+Template: Sparkling-theme
+Description: Sparkling is a clean minimal and responsive WordPress theme well suited for travel, health, business, finance, portfolio, design, art, photography, personal, ecommerce and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly. Theme comes with full-screen slider, social icon integration, author bio, popular posts widget and improved category widget. Sparkling incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly thanks to its clean structure and codebase. It has dozens of Theme Options based on WordPress Customizer to change theme layout, colors, fonts, slider settings and much more. Theme is also translation and multilingual ready, compatible with WPML and is available in Spanish, French, Dutch, Polish, Russian, German, Brazilian Portuguese, Portuguese (Portugal), Persian (Iranian language), Romanian, Turkish, Bulgarian, Japanese, Lithuanian, Czech, Ukrainian, Traditional Chinese, Simplified Chinese, Indonesian, Estonian, Spanish (Argentina) and Italian. Sparkling is a free WordPress theme with premium functionality and design. Theme is ecommerce ready thanks to its WooCommerce integration. Now theme is optimized to work with bbPress, Contact Form 7, Jetpack, WooCommerce and other popular free and premium plugins. Lately we introduced a sticky/fixed navigation that you can enable or disable via WordPress Customizer.
+Version: 2.2.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sparkling-theme-child
+Domain Path: /languages/
+Tags: green, light, white, gray, black, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, photoblogging, left-sidebar, translation-ready, custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments
+
+
+This theme, like WordPress, is licensed under the GPL.
+
+sparkling is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
+*/
+	
+@import url("../sparkling-theme/style.css");
+@font-face {
+	font-family="Isabella Script"  
+	src: local('Isabella Script'), 
+		url("users/mullins/library/fonts/Isabella-script.ttf") format('truetype');  
+	font-weight="400";  
+}
+
+.home-page{
+	align: center;
+	color:black;
+}
+.homepage-featured-services {
+width: 75px;
+padding: 10px;
+border: 5px solid gray;
+float:left;
+margin: 10px;
+display:inline;
+}
+ul {margin: 0; padding: 0; 
+	list-style-type: none; list-style-image: none; 
+}
+li {display: inline; padding: 5px 20px 5px 20px;
+}
+
+h1, .h1 {
+	font-size: 72px;
+	padding-left: 35%;
+	padding-right:15%;
+	align:center;
+	font-weight:strong;
+	font-color:#DA4453;
+	font-family: "Isabella script";
+}
+h3, .h3 {
+	display:inline;
+	font-size:22px;
+	font-weight:normal;
+	font-color:#DA4453;
+}
+div#page.hfeed.site{
+	background:url("img/background2.jpg") no-repeat scroll left center / cover rgba(0, 0, 0, 0);
+}
+
+.site:before{
+background:url("img/background2.jpg") no-repeat scroll left center / cover rgba(0, 0, 0, 0);
+width:100%;;
+content: "";
+display: block;
+height: 100%;
+min-height: 100%;
+position: center;
+top: 10;
+left: 0;
+z-index: 2;
+}
+
+div#content.site-content{
+background:url("img/background2.jpg") no-repeat scroll left center / cover rgba(0, 0, 0, 0);
+}
+.site {
+	max-width: 1280px;
+}
+
+.main-content {
+	width: 100%;
+	font-size: 30px;
+	font-color:#DA4453;
+	
+	
+}
+
+article.featured-services {
+	margin:0 0 0;
+}
+
+aside.services-sidebar {
+	float:left;
+	width:50px;
+	margin: 0 0px 0 0;
+}
+
+div.services-images {
+	float:left;
+	width:100px;
+	size:small;
+}
+
+div.services-images img {
+	float:left;
+	display:block;
+	margin-bottom:50px;
+	border:1px solid #dddddd;
+	size:small;
+}
+ul .services-offered{
+	float:left;
+	position:center;
+	font-size:18px;
+}
+
+li.services {
+	display:inline-block;
+	margin-right:10px;
+	width:30%;
+}
+
+
+article.featured-services {
+	margin:40px 0 0;
+}
+
+aside.services-sidebar {
+	float:left;
+	width:314px;
+	margin: 0 40px 0 0;
+}
+
+div.services-images {
+	float:left;
+	width:605px;
+}
+
+div.services-images img {
+	display:block;
+	margin-bottom:50px;
+	border:1px solid #dddddd;
+}
+
+li.services {
+	display:inline-block;
+	margin-right:10px;
+}
+p{
+	font-size:18px;
+	font-color:black;
+}
+h4,
+.h4 .contact-me{
+	display: inline;
+	font-size: 52px;
+	font-family: "Isabella script"
+}
+.disney-images{
+	display:inline-block;
+	padding:10%;
+	
+}
+p{
+	color:#DA4453;
+}
+	
+}
+/************ABOUT PAGE*********/
+.about-page{
+	background:url("img/background2.jpg") no-repeat scroll left center / cover rgba(0, 0, 0, 0);
+	width:100%;
+	height:100%;
+}
+h1.entry-title{ 
+	font-size:72px;
+}
+div.container.main-content-area{
+	padding: 5%;
+}
+.post-inner-content {
+padding: 45px 50px;
+background-color: inherit;
+border-top: none;
+}
+.post-inner-content:first-child{
+	border:none;
+}
+.col-md-4{
+	background:inherit;
+}
+.well{
+	background:inherit;
+	border: none;
+}
+
+/******Sidebar********/
+#secondary .widget a {
+	color:black;
+	overflow:hidden;
+}
+.widget ul li{
+	list-style: none;
+	margin-bottom: 1px;
+	padding-bottom: 1px;
+	padding: 10px;
+}
+
+.widget ul li{
+	list-style: none;
+	margin-bottom: 1px;
+	padding-bottom: 1px;
+	float:left;
+	border-bottom: none;
+}
+#secondary .widget{
+	color:#DA4453;
+}
