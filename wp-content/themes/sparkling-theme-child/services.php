@@ -27,13 +27,14 @@ get_header(); ?>
 			<article class="services">
 					<section class="featured-services">
 					<div class="image-1 align-left">
-						<?php echo wp_get_attachment_image( $image_1, $size ); ?>
+						<?php echo wp_get_attachment_image( $image_1, $size3 ); ?>
 					</div>
 					<div class="itinerary_planning">
 						<h2>Itinerary Planning</h2> 
 						<p><?php echo $itinerary_planning; ?></p>
 				</div>
 			</article>
+			
 					
 			<?php endwhile; // end of the loop. ?>
 

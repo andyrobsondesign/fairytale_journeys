@@ -46,16 +46,17 @@ get_header(); ?>
 	<p>Select the destination below to current offers, packages, resort information and more!</p>
 
 <div class= "disney-images">
-<a href="http://www.disneywebcontent.com/dcc/27715" target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/WDW/button_library/headers_200_square_WDW.jpg" alt="WDW" border="0" /></a> 
-<a href="http://www.disneywebcontent.com/dcc/27715" target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/DLR/button_library/headers_200_square_DLR.jpg" alt="DLR" border="0" /></a>
-<a href="http://www.disneywebcontent.com/dcc/27715" target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/DCL/button_library/headers_200_square_DCL.jpg" alt="DCL" border="0" /></a>
-<a href="http://www.disneywebcontent.com/dcc/27715" target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/ABD/button_library/ABD_CSB_200x200.jpg" alt="ABD" border="0" /></a></br>
+<a href="https://www.disneytravelcenter.com/ms8b21ad81/"target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/WDW/button_library/headers_200_square_WDW.jpg" alt="WDW" border="0" /></a> 
+<a href="https://www.disneytravelcenter.com/mse78d3be8/" target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/DLR/button_library/headers_200_square_DLR.jpg" alt="DLR" border="0" /></a>
+<a href="https://www.disneytravelcenter.com/ms92b9092f/" target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/DCL/button_library/headers_200_square_DCL.jpg" alt="DCL" border="0" /></a>
+<a href="https://www.disneytravelcenter.com/ms17bec8e3/" target="_blank"><img src="https://media.disneywebcontent.com/StaticFiles/CSA/ABD/button_library/ABD_CSB_200x200.jpg" alt="ABD" border="0" /></a></br>
  </div>
 <br>
 <br>
 	
 		<class="contact me">
 			<h4><a href="http://localhost:8888/fairytale_journeys/contact-me/">Contact me!</a></h4>
+			<p> Contact me today about booking your trip for a free, no obligation <a href=<a href="http://localhost:8888/fairytale_journeys/quote-request"> quote</p>
 			<br>
 <br>
 <br>
