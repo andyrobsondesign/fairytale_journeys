@@ -18,6 +18,17 @@ function create_custom_post_types() {
             'rewrite' => array( 'slug' => 'services' ),
         )
     );
+    register_post_type( 'height chart',
+        array(
+            'labels' => array(
+                'name' => __( 'heightchart' ),
+                'singular_name' => __( 'height_chart' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'height_chart' ),
+        )
+    );
 }
 add_action( 'init', 'create_custom_post_types' );
 

@@ -246,3 +246,113 @@ border-top: none;
 #secondary .widget{
 	color:#DA4453;
 }
+/* Height Chart */
+article.resources {
+	margin:40px 0 0;
+}
+
+aside.heightchart-sidebar {
+	float:left;
+	width:314px;
+	margin: 0 40px 0 0;
+}
+
+div.heightchart-images {
+	float:left;
+	width:605px;
+}
+
+div.height-chart-images img {
+	display:block;
+	margin-bottom:50px;
+	border:1px solid #dddddd;
+}
+
+li.individual-heightchart {
+	display:inline-block;
+	margin-right:10px;
+}
+
+h4.center {
+	text-align: center;
+	font-color: black;
+}
+article.heightchart {
+    margin: 60px 0 0;
+}
+
+aside.heightchart-info {
+    float: left;
+    width: 300px;
+    margin: -5px 40px 0 0;
+}
+
+.single-heightchart aside.heightchart-info {
+    margin-bottom: 40px;
+}
+
+.resources-info h4 {
+    font-size: 14px;
+    color: #a6a6a6;
+    font-weight: 600;
+    margin: 0;
+}
+
+.heightchart-info h5 {
+    font-size: 16px;
+    line-height: 1.3333333333;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.heightchart-info p {
+    margin-top: 40px;
+}
+
+div.height-chart-images {
+    width: 608px;
+    float: left;
+    text-align: center;
+}
+/* Archive heightchart*/
+
+article.heightchart {
+	margin:40px 0 0;
+}
+
+aside.heightchart-sidebar {
+	float:left;
+	width:314px;
+	margin: 0 40px 0 0;
+}
+
+div.height-chart-images {
+	float:left;
+	width:605px;
+}
+
+div.height-chart-images  {
+	display:block;
+	margin-bottom:50px;
+	border:1px solid #dddddd;
+}
+
+li.individual-featured-resources {
+	display:inline-block;
+	margin-right:10px;
+}
+
+h4.center {
+	text-align: center;
+	font-color: black;
+}
+
+
+.heightchart-imgs img {
+    margin: 0 0 87px;
+}
+/*Resources*/
+li.height_chart{
+	display:inline-block;
+		margin-right:10px;
+}
