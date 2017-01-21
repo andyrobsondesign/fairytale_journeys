@@ -3,7 +3,7 @@ Contributors: MooveAgency, gaspar.nemes
 Stable tag: trunk
 Tags: xml import, rss import, xml feed import, rss feed import, import
 Requires at least: 3.0.1 or higher
-Tested up to: 4.5.2
+Tested up to: 4.7
 License: GPLv2
 
 This plugin adds the ability to import content from an external XML/RSS file, or from an uploaded XML/RSS.
@@ -53,6 +53,15 @@ This plugin was developed by Moove Agency.
 3. Use the Settings->Moove feed importer screen to configure the plugin
 
 == Changelog ==
+
+= 1.0.9 =
+* Fixed "Wrong or unreadable XML file!" error on file upload.
+
+= 1.0.8 =
+* Fixed "Wrong or unreadable XML file!" error appeared for Internet Explorer users.
+
+= 1.0.7 =
+* Fixed featured image import
 
 = 1.0.6. =
 * Added ability to set post_date from xml/rss feed. (thanks to metadan)

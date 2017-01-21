@@ -79,17 +79,13 @@ class NF_Admin_CPT_DownloadAllSubmissions extends NF_Step_Processing {
             $myfile = fopen( $file_path, 'a' ) or die( 'Unable to open file!' );
             $x = 0;
             $export = '';
-            foreach ( $subs_results as $sub ) {
-                $sub_export = NF_Database_Models_Submission::export( $this->args['form_id'], array( $sub->ID ), TRUE );
-                if ( $x > 0 || $this->step > 1 ) {
-                    $sub_export = substr( $sub_export, strpos( $sub_export, "\n" ) + 1 );
-                }
-                if ( ! in_array( $sub->ID, $exported_subs ) ) {
-                    $export .= $sub_export;
-                    $exported_subs[] = $sub->ID;
-                }
-                $x++;
+
+            $sub_ids = array();
+            foreach( $subs_results as $result ){
+                $sub_ids[] = $result->ID;
             }
+            $export .= NF_Database_Models_Submission::export( $this->args['form_id'], $sub_ids, TRUE );
+
             fwrite( $myfile, $export );
             fclose( $myfile );
         }
@@ -139,9 +135,7 @@ class NF_Admin_CPT_DownloadAllSubmissions extends NF_Step_Processing {
             ?>
             <script type="text/javascript">
                 jQuery(document).ready(function() {
-                    jQuery('<option>').val('export').text('<?php _e('Export')?>').appendTo("select[name='action']");
-                    jQuery('<option>').val('export').text('<?php _e('Export')?>').appendTo("select[name='action2']");
-                    <?php
+                     <?php
                     if ( ( isset ( $_POST['action'] ) && $_POST['action'] == 'export' ) || ( isset ( $_POST['action2'] ) && $_POST['action2'] == 'export' ) ) {
                     ?>
                     setInterval(function(){

@@ -56,7 +56,7 @@ get_header(); ?>
 	
 		<class="contact me">
 			<h4><a href="http://localhost:8888/fairytale_journeys/contact-me/">Contact me!</a></h4>
-			<p> Contact me today about booking your trip for a free, no obligation <a href=<a href="http://localhost:8888/fairytale_journeys/quote-request"> quote</p>
+			<p> Contact me today about booking your trip for a free, no obligation <a href=<a href="http://localhost:8888/fairytale_journeys/quote-request"> <strong>quote!</strong></p>
 			<br>
 <br>
 <br>
@@ -66,5 +66,7 @@ get_header(); ?>
 
 <?php get_sidebar (); ?>
 
-			
+<br>	
+<br>
+<br>		
 <?php get_footer(); ?>

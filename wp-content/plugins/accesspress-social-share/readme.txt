@@ -3,8 +3,8 @@ Contributors: Access Keys
 Tags: social share counter, social share, social media share, social network share, social media, social network, share counter, social share count, social url share, social icons
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
-Tested up to: 4.6
-Stable tag: 4.2.3
+Tested up to: 4.7
+Stable tag: 4.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -141,6 +141,15 @@ Yes. You can use the AccessPress social share by using shortcode anywhere you wa
 6. Backend Miscellaneous Settings Section
 
 == Changelog ==
+= 4.2.6 =
+* Fixed css issues for the plugin's backend settings - miscelleneous settings of the plugin.
+
+= 4.2.5 =
+* Checked plugin compactibility with wordpress version 4.7
+
+= 4.2.4 = 
+* Removed unnecessary codes from plugin's main file.
+
 = 4.2.3 =
 * Made the plugin object global to remove the content filter hook by other.
 

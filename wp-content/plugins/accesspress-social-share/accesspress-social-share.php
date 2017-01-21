@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
   Plugin name: Social Share WordPress Plugin - AccessPress Social Share
   Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-social-share/
   Description: A plugin to add various social media shares to a site with dynamic configuration options.
-  Version: 4.2.3
+  Version: 4.2.6
   Author: AccessPress Themes
   Author URI: http://accesspressthemes.com
   Text Domain: accesspress-social-share
@@ -30,7 +30,7 @@ if ( !defined( 'APSS_LANG_DIR' ) ) {
 }
 
 if ( !defined( 'APSS_VERSION' ) ) {
-	define( 'APSS_VERSION', '4.2.3' );
+	define( 'APSS_VERSION', '4.2.6' );
 }
 
 if ( !defined( 'APSS_TEXT_DOMAIN' ) ) {
@@ -224,7 +224,6 @@ if ( !class_exists( 'APSS_Class' ) ) {
 		//add plugins menu in backend
 		function add_apss_menu() {
 			add_menu_page( 'AccessPress Social Share', 'AccessPress Social Share', 'manage_options', 'accesspress-social-share', array( $this, 'main_page' ), APSS_IMAGE_DIR . '/apss-icon.png' );
-			//add_submenu_page( 'accesspress-social-share', __( 'SAccessPress Social Share', 'accesspress-social-share' ), __( 'Social Icons Settings', 'accesspress-social-share' ), 'manage_options', 'accesspress-social-share', array( $this, 'main_page' ) );
 		}
 
 		//for saving the plugin settings
@@ -443,8 +442,8 @@ if ( !class_exists( 'APSS_Class' ) ) {
 		$app_id = $apss_settings['api_configuration']['facebook']['app_id'];
 		$app_secret = $apss_settings['api_configuration']['facebook']['app_secret'];
 		$api_url = 'https://graph.facebook.com/';
-		$app_id= $apss_settings['api_configuration']['facebook']['app_id'];  // '1779750458903669' ; 
-		$app_secret = $apss_settings['api_configuration']['facebook']['app_secret']; // 'd9adea962115a185d6ab275b33a8fef8';
+		$app_id= $apss_settings['api_configuration']['facebook']['app_id'];
+		$app_secret = $apss_settings['api_configuration']['facebook']['app_secret'];
 		$url = sprintf(
 			'%soauth/access_token?client_id=%s&client_secret=%s&grant_type=client_credentials',
 			$api_url,

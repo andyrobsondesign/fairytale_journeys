@@ -34,7 +34,7 @@ class Moove_Importer_Controller {
      */
     private function moove_recurse_xml( $xml , $parent = "" ) {
         $child_count = 0;
-        foreach($xml as $key => $value) {
+        foreach( $xml as $key => $value ) :
             $child_count++;
             if ( count($value) ) :
                 $count = $this->xmlnodes[$value->getName()]['count'] + 1;
@@ -48,10 +48,11 @@ class Moove_Importer_Controller {
             if( Moove_Importer_Controller::moove_recurse_xml( $value , $parent . "/" . $key ) == 0 ) {
                 $this->xmlreturn[] = array(
                     'key'   =>  $parent . "/" . (string)$key,
-                    'value' =>  (string)$value
+                    'value' =>  (string)$value,
+                    'xml'   =>  $xml
                 );
             }
-        }
+        endforeach;
        return $child_count;
     }
     /**
@@ -71,6 +72,7 @@ class Moove_Importer_Controller {
         if ( $args['xmlaction'] === 'check' ) :
             if ( $xml ) :
                 $parent = $parent . "/" . $xml->getName();
+
                 Moove_Importer_Controller::moove_recurse_xml( $xml, $parent );
                 // $this->xmlnodes = array_unique( $this->xmlnodes );
                 ob_start(); ?>
@@ -123,7 +125,6 @@ class Moove_Importer_Controller {
 
             if ( count( $xml ) ) :
                 ob_start();
-
                 echo "<hr><h4>Node count: ". count( $xml )." <span class='pagination-info'>Current item: 1 / " . count( $xml ) . " </span></h4>";
                 if ( count( $xml ) > 1 ) :
                     echo "<span data-current='1'>";
@@ -350,8 +351,10 @@ class Moove_Importer_Controller {
         $xml_data_values = $args['value'];
         $new_form_data = array();
         foreach ( $form_data as $form_key => $form_value ) :
+
             if ( $form_value !== '0' && $form_key !== 'post_status' && $form_key !== 'post_type' && $form_key !== 'post_author' && $form_key !== 'post_featured_image' ) :
-                if ( $form_key === 'taxonomies' && count( $form_value ) ) :
+
+                if ( $form_key === 'taxonomies' && is_array( $form_value ) ) :
                     $j = 0;
                     foreach ( $form_value as $tax_key => $tax_value ) :
                         if ( $tax_value['title'] !== '0' ) :
@@ -359,34 +362,56 @@ class Moove_Importer_Controller {
                             $_key =  Moove_Importer_Controller::moove_recursive_array_search( $tax_value['title'] , $xml_data_values['values']) ;
                             if ( is_array( $_key ) ) :
                                 $tax_title = $xml_data_values['values'][$_key[0]]['value'];
+                                $new_form_data[ $form_key ][] = array(
+                                    'taxonomy'      =>  $tax_value['taxonomy'],
+                                    'title'         =>  $tax_title,
+                                );
                             endif;
-                            $new_form_data[ $form_key ][] = array(
-                                'taxonomy'      =>  $tax_value['taxonomy'],
-                                'title'         =>  $tax_title,
-                            );
+
                         endif;
                     endforeach;
                 elseif ( $form_key === 'post_date' ) :
+
                     $_key =  Moove_Importer_Controller::moove_recursive_array_search( $form_value , $xml_data_values['values'] );
                     if ( is_array( $_key ) ) :
                         $new_form_data[ $form_key ] = DateTime::createFromFormat( "D, d M Y H:i:s O", $xml_data_values['values'][$_key[0]]['value'] )->format('Y-m-d H:i:s');
+                    endif;
+                elseif ( $form_key === 'post_content' || $form_key === 'post_excerpt' ) :
+                    $_key =  Moove_Importer_Controller::moove_recursive_array_search( $form_value , $xml_data_values['values'] );
+                    if ( is_array( $_key ) ) :
+                        $value =  $xml_data_values['values'][$_key[0]]['value'];
+                        $new_form_data[ $form_key ] = $value;
                     endif;
 
                 else :
                     $_key =  Moove_Importer_Controller::moove_recursive_array_search( $form_value , $xml_data_values['values'] );
                     if ( is_array( $_key ) ) :
-                        $new_form_data[ $form_key ] = $xml_data_values['values'][$_key[0]]['value'];
+                        $value =  $xml_data_values['values'][$_key[0]]['value'];
+                        $new_form_data[ $form_key ] = $value;
+
                     endif;
                 endif;
             else :
                 if ( $form_key === 'post_status' || $form_key === 'post_type' ) :
+
                     $new_form_data[ $form_key ] = $form_value;
-                elseif ( $form_key === 'post_author' ):
+
+                elseif ( $form_key === 'post_author' ) :
+
                     $new_form_data[ $form_key ] = intval( $form_value );
-                endif;;
+
+                elseif ( $form_key === 'post_featured_image' ) :
+                    $_key =  Moove_Importer_Controller::moove_recursive_array_search( $form_value , $xml_data_values['values'] );
+                    if ( is_array( $_key ) ) :
+                        $img_url = $xml_data_values['values'][$_key[0]]['value'];
+                        $new_form_data[ $form_key ] = preg_replace( '/\\?.*/', '', $img_url );
+                    endif;
+                endif;
             endif;
         endforeach;
         // Create post object.
+
+
         $new_post = array();
         foreach ( $new_form_data as $form_key => $form_value ) :
             $new_post[ $form_key ] = $form_value;
@@ -395,19 +420,10 @@ class Moove_Importer_Controller {
         $post_id = wp_insert_post( $new_post );
         foreach ( $new_form_data['taxonomies'] as $taxonomy_value ) :
             if ( $taxonomy_value['title'] !== "0" ) :
-                $title = $taxonomy_value['title'];
-                $taxonomy = $taxonomy_value['taxonomy'];
-                $slug = sanitize_title( $taxonomy_value['title'] );
-                wp_set_post_terms( $post_id, $slug, $taxonomy, true );
-                $_new_taxonomy = get_term_by( 'name', $slug, $taxonomy );
-                wp_update_term(
-                    $_new_taxonomy->term_id,
-                    $taxonomy,
-                    array(
-                        'name' => $title,
-                        'slug' => $slug
-                    )
-                );
+                $taxonomy   = $taxonomy_value['taxonomy'];
+                $title = preg_replace( '/\s+/', '', $taxonomy_value['title'] );
+                $values = array_filter( explode( ',', $title ) );
+                wp_set_object_terms( $post_id, $title, $taxonomy, false );
             endif;
         endforeach;
         Moove_Importer_Controller::moove_set_featured_image( $post_id, $new_form_data[ 'post_featured_image' ] );

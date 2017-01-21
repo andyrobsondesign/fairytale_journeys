@@ -68,8 +68,8 @@
         )
     }
     function getXmlString(xml) {
-      if (window.ActiveXObject) { return xml.xml; }
-      return new XMLSerializer().serializeToString(xml);
+        var string = new XMLSerializer().serializeToString(xml.documentElement);
+        return string;
     }
 
     function invalid_xml_action() {

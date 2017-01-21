@@ -152,21 +152,20 @@
 								} ?> /><label for="disable_frontend_assets_y"><?php _e( 'Yes', 'accesspress-social-share' ); ?></label></div>
 								<br />
 								<div class="apss_notes_cache_settings">
-		<?php _e( 'Please set this value if you don\'t want to use plguins frontend assets(js and css files).', 'accesspress-social-share' ); ?>
+									<?php _e( 'Please set this value if you don\'t want to use plguins frontend assets(js and css files).', 'accesspress-social-share' ); ?>
 								</div>
 							</div>
 							<br />
-							<div class="apss-share-text-settings clearfix">
-		<?php _e( 'Share text:', 'accesspress-social-share' ); ?> <input type="text" name="apss_share_settings[share_text]"  value="<?php if ( isset( $options['share_text'] ) ) {
-			echo $options['share_text'];
-		} ?>" />
+							<div class="apss_input_wrapper clearfix">
+								<label><?php _e( 'Share text:', 'accesspress-social-share' ); ?></label>
+								<input type="text" name="apss_share_settings[share_text]"  value="<?php if ( isset( $options['share_text'] ) ) { echo $options['share_text']; } ?>" />
 								<div class="apss_notes_cache_settings">
 									<?php _e( 'Please enter the share text to make it appear above social share icons. Leave blank if you don\'t want to use share text.', 'accesspress-social-share' ); ?>
 								</div>
 							</div>
-							<br />
-							<div class="apss-twitter-settings clearfix">
-		<?php _e( 'Twitter username:', 'accesspress-social-share' ); ?> <input type="text" name="apss_share_settings[twitter_username]"  value="<?php echo $options['twitter_username']; ?>" />
+							<div class="apss_input_wrapper apss-twitter-settings clearfix">
+								<label><?php _e( 'Twitter username:', 'accesspress-social-share' ); ?></label>
+								<input type="text" name="apss_share_settings[twitter_username]"  value="<?php echo $options['twitter_username']; ?>" />
 							</div>
 
 							<div class="apss-counter-settings clearfix">
@@ -211,7 +210,7 @@
 										<div class="apss_notes_cache_settings">Please go to <a href="https://developers.facebook.com/" target="_blank">https://developers.facebook.com/</a> and create an app and get the App ID.</div>
 									</div>
 									<div class='apss_input_wrapper'>
-										<label for=apss_facebook_app_secret"">APP Secret: </label><input type='text' id="apss_facebook_app_secret" name='apss_share_settings[api_configuration][facebook][app_secret]' value="<?php if ( isset( $options['api_configuration']['facebook']['app_secret'] ) ) { echo $options['api_configuration']['facebook']['app_secret']; } ?>" />
+										<label for=apss_facebook_app_secret"">APP Secret: </label><input type='text' id="apss_facebook_app_secret" name='apss_share_settings[api_configuration][facebook][app_secret]' value="<?php if ( isset( $options['api_configuration']['facebook']['app_secret'] ) ) { echo $options['api_configuration']['facebook']['app_secret']; } ?>" style="width:285px;" />
 										<div class="apss_notes_cache_settings">Please go to <a href="https://developers.facebook.com/" target="_blank">https://developers.facebook.com/</a> and create an app and get the App Secret.</div>
 									</div>
 									<div class="apss_notes_cache_settings">
@@ -277,13 +276,12 @@
 							<br />
 							<div class='cache-settings'>
 								<h4><?php _e( 'Cache Settings: ', 'accesspress-social-share' ); ?> </h4>
-								<label for="apss_cache_settings"><?php _e( 'Cache Period:', 'accesspress-social-share' ); ?></label>
-								<input type='text' id="apss_cache_period" name='apss_share_settings[cache_settings]' value="<?php if ( isset( $options['cache_period'] ) ) {
-							echo $options['cache_period'];
-						} ?>" onkeyup="removeMe('invalid_cache_period');"/>
-								<span class="error invalid_cache_period"></span>
-								<div class="apss_notes_cache_settings">
-		<?php _e( 'Please enter the time in hours in which the social share counter should be updated from social networks. Default is 24 hours.', 'accesspress-social-share' ); ?>
+								<div class="apss_input_wrapper">
+									<label for="apss_cache_settings"><?php _e( 'Cache Period:', 'accesspress-social-share' ); ?></label>
+									<input type='text' id="apss_cache_period" name='apss_share_settings[cache_settings]' value="<?php if ( isset( $options['cache_period'] ) ) { echo $options['cache_period']; } ?>" onkeyup="removeMe('invalid_cache_period');" style='width:50px;'/>
+									<span class="error invalid_cache_period"></span>
+									<div class="apss_notes_cache_settings"><?php _e( 'Please enter the time in hours in which the social share counter should be updated from social networks. Default is 24 hours.', 'accesspress-social-share' ); ?></div>
+									
 								</div>
 							</div>
 
@@ -291,7 +289,7 @@
 								<h4><?php _e( 'Email Settings:', 'accesspress-social-share' ); ?></h4>
 								<div class="app-email-sub email-setg">
 									<label for='apss-email-subject'><?php _e( 'Email subject:', 'accesspress-social-share' ); ?></label>
-									<input type='text' name="apss_share_settings[apss_email_subject]" value="<?php echo $options['apss_email_subject'] ?>" />
+									<input type='text' name="apss_share_settings[apss_email_subject]" value="<?php echo $options['apss_email_subject'] ?>" style='width:325px;'/>
 								</div>
 								<div class="app-email-body email-setg">
 									<label for='apss-email-body'><?php _e( 'Email body:', 'accesspress-social-share' ); ?></label>

@@ -12,9 +12,13 @@
 
 		</div><!-- #main -->
 				
-		<nav class= 'footer-navigation' role="navigation">
-				<?php wp_nav_menu() ; ?>
-			</nav>
+		<div class='footer'>
+				<img src=http://localhost:8888/fairytale_journeys/wp-content/uploads/2016/12/ftj-e1482201171656.png>
+			</img>
+				<aside><h5>Fairytale Journeys by Bobbi is an affiliate of Fairytale Journeys, LLC, an Authorized Disney Vacation Planner</h5></aside>
+					
+			
+			</div>
 
 				
 			</div><!-- .site-info -->
